@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, Flask!</h1>
+        <div class="buttons">
+            <button><a href="{{ url_for('show_day', day_name='Monday') }}">Monday</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Tuesday') }}">Tuesday</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Wednesday') }}">Wednesday</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Thursday') }}">Thursday</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Friday') }}">Friday</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Saturday') }}">Saturday</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Sunday') }}">Sunday</a></button>
+        </div>
+        <div class="schedule">
+            <h2>Weekly Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for day, actions in schedule.items() %}
+                    {% for action in actions %}
+                    <tr>
+                        <td>{{ day }}</td>
+                        <td>{{ action.time }}</td>
+                        <td>{{ action.action }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
