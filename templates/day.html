@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ day_name }} Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, Flask!</h1>
+        <div class="content">
+            <div class="action-form">
+                <h2>Add Action for {{ day_name }}</h2>
+                <form action="/day/{{ day_name }}" method="post">
+                    <label for="time">Time:</label>
+                    <input type="text" id="time" name="time" placeholder="Enter time"><br><br>
+                    <label for="action">Action:</label><br>
+                    <textarea id="action" name="action" rows="4" cols="50" placeholder="Enter action"></textarea><br><br>
+                    <input type="submit" value="Add Action">
+                </form>
+            </div>
+            <div class="schedule">
+                <h2>{{ day_name }} Schedule</h2>
+                {% for item in schedule %}
+                <p>{{ item.time }} - {{ item.action }} <a href="/edit/{{ item.id }}">Редагувати</a> <a href="/delete/{{ item.id }}">Видалити</a></p>
+                {% endfor %}
+            </div>
+        </div>
+        <a href="/return_home">Повернутися в головне меню</a>
+    </div>
+</body>
+</html>
