@@ -58,7 +58,7 @@ def show_day(day_name):
         return redirect(url_for('show_day', day_name=day_name))
     
     schedule = Action.query.filter_by(day=day_name).all()
-    return render_template('monday.html', schedule=schedule)
+    return render_template('day.html',day_name=day_name, schedule=schedule)
 
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete_action(id):
