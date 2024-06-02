@@ -8,24 +8,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello, Flask!</h1>
+        <h1>Календар</h1>
         <div class="buttons">
-            <button><a href="{{ url_for('show_day', day_name='Monday') }}">Monday</a></button>
-            <button><a href="{{ url_for('show_day', day_name='Tuesday') }}">Tuesday</a></button>
-            <button><a href="{{ url_for('show_day', day_name='Wednesday') }}">Wednesday</a></button>
-            <button><a href="{{ url_for('show_day', day_name='Thursday') }}">Thursday</a></button>
-            <button><a href="{{ url_for('show_day', day_name='Friday') }}">Friday</a></button>
-            <button><a href="{{ url_for('show_day', day_name='Saturday') }}">Saturday</a></button>
-            <button><a href="{{ url_for('show_day', day_name='Sunday') }}">Sunday</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Понеділок') }}">Понеділок</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Вівторок') }}">Вівторок</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Середа') }}">Середа</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Четвер') }}">Четвер</a></button>
+            <button><a href="{{ url_for('show_day', day_name='П`ятниця') }}">П`ятниця</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Субота') }}">Субота</a></button>
+            <button><a href="{{ url_for('show_day', day_name='Неділя') }}">Неділя</a></button>
         </div>
         <div class="schedule">
-            <h2>Weekly Schedule</h2>
+            <h2>Тижневий Розклад</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Day</th>
-                        <th>Time</th>
-                        <th>Action</th>
+                        <th>День</th>
+                        <th>Час</th>
+                        <th>Дія</th>
                     </tr>
                 </thead>
                 <tbody>

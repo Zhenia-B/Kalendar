@@ -25,7 +25,7 @@ create_tables()
 def index():
     # Отримання розкладу для всіх днів
     schedule = {}
-    for day_name in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']:
+    for day_name in ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П`ятниця', 'Субота', 'Неділя']:
         schedule[day_name] = Action.query.filter_by(day=day_name).all()
     return render_template('index.html', schedule=schedule)
 

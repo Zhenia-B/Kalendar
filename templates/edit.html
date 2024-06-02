@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Action</title>
+    <title>Змінити дію</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Edit Action</h1>
+        <h1>Змінити дію</h1>
         <form action="/edit/{{ action.id }}" method="post">
-            <label for="time">Time:</label>
+            <label for="time">Час:</label>
             <input type="text" id="time" name="time" value="{{ action.time }}"><br><br>
-            <label for="action">Action:</label><br>
+            <label for="action">Дія:</label><br>
             <textarea id="action" name="action" rows="4" cols="50">{{ action.action }}</textarea><br><br>
             <input type="submit" value="Save Changes">
         </form>
-        <a href="/">Cancel</a>
+        <a href="/">Відмінити</a>
     </div>
 </body>
 </html>
